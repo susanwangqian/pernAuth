@@ -1,4 +1,5 @@
-const {Router} = require('express')
+const {Router} = require('express');
+const { getUsers } = require('../controllers/auth');
 const router = Router();
 
 // use the home URL: '/'
@@ -10,5 +11,8 @@ router.get('/', (req, res) => {
 router.get('/register', (req, res) => {
     return res.send('register route!');
 });
+
+// callback function here is getUsers from /controllers/auth.js
+router.get('/get-users', getUsers);
 
 module.exports = router;
